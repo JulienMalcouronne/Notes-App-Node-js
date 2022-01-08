@@ -4,7 +4,7 @@ const getNotes = require('./notes.js')
 const msg = getNotes()
 console.log(msg)
 
-console.log(chalk.green("success"))
+console.log(chalk.bold.green("success"))
 
 // const add = require('./utils.js')
 // const sum = add(4, -2)
