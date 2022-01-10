@@ -17,9 +17,9 @@ const addNote = function (title, body) {
         body: body
       })
       saveNotes(notes)
-      console.log('Note added')
+      console.log(chalk.green.inverse('Note added'))
     } else {
-        console.log('Note title taken!')
+        console.log(chalk.red.inverse('Note title taken!'))
     }
 }
 
