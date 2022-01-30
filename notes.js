@@ -5,6 +5,7 @@ const getNotes = () => {
   return 'your notes...'
 }
 
+// add note and save it in notes.json
 const addNote = (title, body) => {
     const notes = loadNotes()
     const duplicateNote = notes.find((note) => note.title === title)
@@ -21,7 +22,7 @@ const addNote = (title, body) => {
     }
 }
 
-
+// This function should remove a note that user will specify
 const removeNote = (title) => {
   const notes = loadNotes()
   const noteToKeep = notes.filter((note) => note.title !== title)
@@ -33,6 +34,7 @@ const removeNote = (title) => {
     }
 }
 
+// This function should list all notes
 const listNotes = () => {
   const notes = loadNotes()
   console.log(chalk.inverse('Your notes'))
@@ -62,11 +64,13 @@ const loadNotes = () => {
       return []
   }
 }
+
+// save data in notes.json as json
 const saveNotes = function (notes) {
   const dataJSON = JSON.stringify(notes)
   fs.writeFileSync('notes.json', dataJSON)
 }
-
+// exports all the function to be able to use it in app.js
 module.exports = {
   getNotes: getNotes,
   addNote: addNote,
